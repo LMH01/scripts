@@ -7,13 +7,21 @@ fi
 (
     if ! umount /dev/mapper/luks
     then
-        exit
+        exit 1
     fi
 )
+if [ $? -ne 0 ]
+then
+     exit 1
+fi
 (
     if ! cryptsetup luksClose luks
     then
-        exit
+        exit 1
     fi
 )
+if [ $? -ne 0 ]
+then
+     exit 1
+fi
 echo "Encrypted usb-stick is no longer mounted"
