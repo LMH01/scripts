@@ -17,7 +17,6 @@ fi
 if ! [[ -d "/mnt/encrypted" ]]
 then 
     mkdir /mnt/encrypted
-    echo "Created directory /mnt/encrypted"
 fi
 # Check if /mnt/encrypted is empty
 if ! [ -z "$(ls -A /mnt/encrypted)" ]
@@ -26,20 +25,10 @@ then
     exit 1
 fi
 (
-    cryptsetup luksOpen /dev/sda luks
+    veracrypt -t -k "" --pim=0 --protect-hidden=no /dev/sda /mnt/encrypted/
     if [ $? -ne 0 ]
     then
-         exit 1
-    fi
-)
-if [ $? -ne 0 ]
-then
-     exit 1
-fi
-(
-    mount /dev/mapper/luks /mnt/encrypted
-    if [ $? -ne 0 ]
-    then
+        rm -r /mnt/encrypted
         exit 1
     fi
 )

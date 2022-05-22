@@ -5,7 +5,7 @@ then echo "ERROR: This script must be run with root privileges"
     exit
 fi
 (
-    if ! umount /dev/mapper/luks
+    if ! veracrypt -d /dev/sda
     then
         exit 1
     fi
@@ -15,7 +15,7 @@ then
      exit 1
 fi
 (
-    if ! cryptsetup luksClose luks
+    if ! rm -r /mnt/encrypted
     then
         exit 1
     fi

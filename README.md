@@ -9,7 +9,7 @@ Will install some basic software and setup i3 with sddm. My [dotfiles repository
 Uses i3lock to display a lockscreen after the pc is woken from suspend. The file located at ~/Pictures/lockscreen.png will be shown when the pc is woken.
 
 ## [open-encrypted-usb](./scripts/open-encrypted-usb)
-Opens an luks encrypted usb drive located at /dev/sda and mounts it to `/mnt/encrypted`.
+Opens an veracrypt encrypted usb drive located at /dev/sda and mounts it to `/mnt/encrypted`.
 
 ## [close-encrypted-usb](./scripts/close-encrypted-usb)
 Closes the previously opened usb drive at /dev/mapper/luks
