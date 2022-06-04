@@ -14,6 +14,7 @@ echo "rustup and stable rust toolchain"
 echo "i3 - Window Manager"
 echo "i3status-rust - Status bar for i3"
 echo "sddm - Login manager"
+echo "picom - Compositor"
 echo "fish - Shell"
 echo "starship - Cross-shell prompt for astronauts"
 echo "pulseaudio - Audiodriver"
@@ -95,7 +96,7 @@ configFolder="$(pwd)/dotfiles/general/.config"
 # Install other required packages
 (
     echo "Installing other packages"
-    exec paru -S i3 i3status-rust sddm fish starship pulseaudio pasystray flameshot rofi rofi-emoji archlinux-wallpaper neovim zoxide nitrogen alacritty ttf-font-awesome --noconfirm
+    exec paru -S i3 i3status-rust picom sddm fish starship pulseaudio pasystray flameshot rofi rofi-emoji archlinux-wallpaper neovim zoxide nitrogen alacritty ttf-font-awesome --noconfirm
 )
 # Install nvim-packer-git
 echo "Preparing to install nvim-packer-git"
