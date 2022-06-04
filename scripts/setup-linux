@@ -20,6 +20,7 @@ echo "pulseaudio - Audiodriver"
 echo "pasystray - Pulseaudio system tray"
 echo "flameshot - Screenshot tool"
 echo "rofi - Window switcher and application launcher"
+echo "rofi-emoji - Emoji selector for rofi"
 echo "neovim - Vim in better"
 echo "nvim-packer - Neovim plugin manager"
 echo "nitrogen - Background browser"
@@ -94,7 +95,7 @@ configFolder="$(pwd)/dotfiles/general/.config"
 # Install other required packages
 (
     echo "Installing other packages"
-    exec paru -S i3 i3status-rust sddm fish starship pulseaudio pasystray flameshot rofi archlinux-wallpaper neovim zoxide nitrogen alacritty ttf-font-awesome --noconfirm
+    exec paru -S i3 i3status-rust sddm fish starship pulseaudio pasystray flameshot rofi rofi-emoji archlinux-wallpaper neovim zoxide nitrogen alacritty ttf-font-awesome --noconfirm
 )
 # Install nvim-packer-git
 echo "Preparing to install nvim-packer-git"
@@ -143,6 +144,7 @@ su $(logname) -c "mkdir -p ~/.config/i3 && cp -rf $configFolder/i3 ~/.config/"
 su $(logname) -c "mkdir -p ~/.config/i3status-rust && cp -rf $configFolder/i3status-rust ~/.config/"
 su $(logname) -c "mkdir -p ~/.config/rofi && cp -rf $configFolder/rofi ~/.config/"
 su $(logname) -c "mkdir -p ~/.config/wired && cp -rf $configFolder/wired ~/.config/"
+su $(logname) -c "mkdir -p ~/.local/share/rofi/themes && cp -rf $configFolder/../.local/share/rofi/themes/dracula.rasi ~/.local/share/rofi/themes/dracula.rasi"
 cp -rf $configFolder/../etc/pacman.conf /etc/
 cp -rf $configFolder/../etc/paru.conf /etc/
 # Ask if the nvim config files should be copied or if a symlink should be created that points to the git folder
